@@ -95,16 +95,17 @@
 
 
 
-<meta name="description" content="但行好事，莫问前程。">
-<meta property="og:type" content="website">
+<meta name="description" content="Spring小结标签（空格分隔）： javaEE框架  之前我们需要一个对象时，就得自己new一个新对象；现在我们把需要的类通过配置文件或注解方式放到spring工厂，它负责帮我们创建对象，我们需要哪一个类的对象时，就从工厂取出对象，我们无需再手动创建对象。  那么如何把需要的类加入Spring工厂呢？我们有两种方式：配置文件方式和注解方式。 ####配置文件方式（用于不是自己编写的类，无法在类上">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hero">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/09/17/Spring小结/index.html">
 <meta property="og:site_name" content="Hero">
-<meta property="og:description" content="但行好事，莫问前程。">
+<meta property="og:description" content="Spring小结标签（空格分隔）： javaEE框架  之前我们需要一个对象时，就得自己new一个新对象；现在我们把需要的类通过配置文件或注解方式放到spring工厂，它负责帮我们创建对象，我们需要哪一个类的对象时，就从工厂取出对象，我们无需再手动创建对象。  那么如何把需要的类加入Spring工厂呢？我们有两种方式：配置文件方式和注解方式。 ####配置文件方式（用于不是自己编写的类，无法在类上">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-17T07:50:03.891Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hero">
-<meta name="twitter:description" content="但行好事，莫问前程。">
+<meta name="twitter:description" content="Spring小结标签（空格分隔）： javaEE框架  之前我们需要一个对象时，就得自己new一个新对象；现在我们把需要的类通过配置文件或注解方式放到spring工厂，它负责帮我们创建对象，我们需要哪一个类的对象时，就从工厂取出对象，我们无需再手动创建对象。  那么如何把需要的类加入Spring工厂呢？我们有两种方式：配置文件方式和注解方式。 ####配置文件方式（用于不是自己编写的类，无法在类上">
 
 
 
@@ -134,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/17/Spring小结/"/>
 
 
 
 
 
-  <title>Hero</title>
+  <title> | Hero</title>
   
 
 
@@ -159,8 +160,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -263,9 +263,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -295,9 +295,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/17/Spring小结/" itemprop="url">未命名</a></h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -389,9 +387,7 @@
       
 
       
-        
-          
-            <h1 id="Spring小结"><a href="#Spring小结" class="headerlink" title="Spring小结"></a>Spring小结</h1><p>标签（空格分隔）： javaEE框架</p>
+        <h1 id="Spring小结"><a href="#Spring小结" class="headerlink" title="Spring小结"></a>Spring小结</h1><p>标签（空格分隔）： javaEE框架</p>
 <hr>
 <pre><code>之前我们需要一个对象时，就得自己new一个新对象；现在我们把需要的类通过配置文件或注解方式放到spring工厂，它负责帮我们创建对象，我们需要哪一个类的对象时，就从工厂取出对象，我们无需再手动创建对象。
 
@@ -456,8 +452,6 @@
 </ol>
 <p>7.后置，环绕，最终通知<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">//统一抽取一个切点表达式</div><div class="line">@Pointcut(value=&quot;execution(* cn.hugang.aop.aspectJ.annotation.*Dao.*(..))&quot;)</div><div class="line">public void myPointCut()&#123;&#125;;</div><div class="line"></div><div class="line">// 定义一个前置通知方法,通过切点表达式描述要拦截的目标对象的方法</div><div class="line">@Before(value = &quot;MyAdvisor.myPointCut()&quot;)//引用上面定义的切点表达式</div><div class="line">public void before1(JoinPoint jp) &#123;</div><div class="line">	//System.out.println(&quot;【前置通知】拦截的的方法：&quot; + jp.getSignature().getName());</div><div class="line">&#125;</div><div class="line"></div><div class="line">//后置通知</div><div class="line">   //returning=&quot;ret&quot;   ret:拦截到的方法执行后的返回值</div><div class="line">@AfterReturning(value=&quot;MyAdvisor.myPointCut()&quot;,returning=&quot;ret&quot;)</div><div class="line">public void afterReturing1(JoinPoint jp,Object ret)&#123;</div><div class="line">	//System.out.println(&quot;【后置通知】拦截的的方法：&quot; + jp.getSignature().getName() + &quot;,此方法的执行结果为：&quot; + ret);</div><div class="line">&#125;</div><div class="line"></div><div class="line">//环绕通知</div><div class="line">@Around(value=&quot;MyAdvisor.myPointCut()&quot;)</div><div class="line">public Object around1(ProceedingJoinPoint pjp) throws Throwable&#123;</div><div class="line">	//System.out.println(&quot;【环绕通知】前&quot;);</div><div class="line">	//必须在环绕通知中手动调用目标对象的方法，否则目标对象的方法将被拦截，不会执行</div><div class="line">	Object value = pjp.proceed();//调用目标对象的方法</div><div class="line">	//System.out.println(&quot;【环绕通知】后&quot;);</div><div class="line">	return value;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//异常通知</div><div class="line">@AfterThrowing(value=&quot;MyAdvisor.myPointCut()&quot;,throwing=&quot;ex&quot;)  //ex:异常的信息</div><div class="line">public void afterThrowing1(JoinPoint jp,Throwable ex)&#123;</div><div class="line">	System.out.println(&quot;【异常通知】执行了，拦截到的目标方法为：&quot; + jp.getSignature().getName() + &quot;,异常信息为：&quot; + ex);</div><div class="line">&#125;</div><div class="line"></div><div class="line">//最终通知</div><div class="line">@After(value=&quot;MyAdvisor.myPointCut()&quot;)</div><div class="line">public void after1(JoinPoint jp)&#123;</div><div class="line">	System.out.println(&quot;【最终通知】拦截到目标方法：&quot; + jp.getSignature().getName());</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
     
@@ -467,6 +461,35 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>欢迎大佬打赏,您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Silence 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Silence 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
@@ -474,197 +497,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/15/内心的平静/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Silence">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/tou.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hero">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/15/内心的平静/" itemprop="url">内心的平静</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-15T17:22:33+08:00">
-                2017-09-15
-              </time>
+              <a href="/2017/09/15/内心的平静/" rel="next" title="内心的平静">
+                <i class="fa fa-chevron-left"></i> 内心的平静
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随想/" itemprop="url" rel="index">
-                    <span itemprop="name">随想</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/09/15/内心的平静/" class="leancloud_visitors" data-flag-title="内心的平静">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  61
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <pre><code>有时候，特别是刚睡醒时，整个人会进入一个状态：内心特别平静，不想说话，整个世界仿佛只有我一个人，能更温柔的对待每一个人。
-我很喜欢这种状态。
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -674,193 +528,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/13/缺点/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Silence">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/tou.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hero">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/13/缺点/" itemprop="url">缺点</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-13T10:58:33+08:00">
-                2017-09-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/09/13/缺点/" class="leancloud_visitors" data-flag-title="缺点">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  0
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -868,6 +540,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDkwMy83NDUy"></div>
+    
+  </div>
+
 
         </div>
         
@@ -888,8 +566,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -953,6 +640,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring小结"><span class="nav-number">1.</span> <span class="nav-text">Spring小结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1087,6 +790,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -1115,6 +822,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

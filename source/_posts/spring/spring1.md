@@ -2,7 +2,7 @@
 title: spring小结（一）———把类加入Spring工厂
 date: 2017-09-17 18:49:24
 categories: spring
-tags: javaEE框架
+tags: JavaEE框架
 ---
 　　之前我们需要一个对象时，就得自己new一个新对象；现在我们把需要的类通过配置文件或注解方式放到spring工厂，它负责帮我们创建对象，我们需要哪一个类的对象时，就从工厂取出对象，我们无需再手动创建对象。
 <!--more-->

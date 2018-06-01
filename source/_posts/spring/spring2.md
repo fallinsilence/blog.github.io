@@ -2,7 +2,7 @@
 title: spring小结（二）————依赖注入
 date: 2017-09-17 19:06:21
 categories: spring
-tags: javaEE框架
+tags: JavaEE框架
 ---
 ## DI（依赖注入）
 

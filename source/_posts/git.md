@@ -1,11 +1,17 @@
+---
+title: git
+date: 2018-06-06 21:08:13
+tags:
+---
 [TOC]
-#在本地创建一个git仓库
+# 本地创建一个git仓库
 1. 新建文件夹
 2. 进入文件夹
 3. 使用git init命令初始化一个git仓库
 4. 进行文件的编写
 5. 使用git add &lt;file&gt;添加文件到暂存区
 6. 使用git commit -m "wrote a readme file",将文件提交到版本库。
+<!--more-->
 
 ## 常用命令
 + git status 查看工作区的状态

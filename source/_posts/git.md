@@ -3,16 +3,15 @@ title: git
 date: 2018-06-06 21:08:13
 tags:
 ---
-# 本地创建一个git仓库
+### 本地创建一个git仓库
 1. 新建文件夹
 2. 进入文件夹
 3. 使用git init命令初始化一个git仓库
-4. 进行文件的编写
+4. 进行文件的编写	<!--more-->
 5. 使用git add &lt;file&gt;添加文件到暂存区
 6. 使用git commit -m "wrote a readme file",将文件提交到版本库。
-<!--more-->
 
-## 常用命令
+### 常用命令
 + git status 查看工作区的状态
 + git log 显示从最近到最远的提交日志
 	+ --pretty=oneline 可以简化输出内容
@@ -30,12 +29,11 @@ tags:
 >Git的版本回退速度非常快，因为Git在内部有个指向当前版本的HEAD指针，当你回退版本的时候，Git仅仅是把HEAD指向你想回退的版本，然后顺便把工作区的文件更新了。所以你让HEAD指向哪个版本号，你就把当前版本定位在哪。
 注意：所有的版本控制系统，其实只能跟踪文本文件的改动，比如TXT文件，网页，所有的程序代码等等，Git也不例外。版本控制系统可以告诉你每次的改动，比如在第5行加了一个单词“Linux”，在第8行删了一个单词“Windows”。而图片、视频这些二进制文件，虽然也能由版本控制系统管理，但没法跟踪文件的变化，只能把二进制文件每次改动串起来，也就是只知道图片从100KB改成了120KB，但到底改了啥，版本控制系统不知道，也没法知道。
 
-
-git add -u
++ git add -u
 将当前已跟踪且已修改文件更新
 
 ### 撤销更改
-###### 丢弃工作区的修改
+#### 丢弃工作区的修改
 ```
 git checkout -- file 丢弃工作区的修改
 ```
@@ -43,7 +41,7 @@ git checkout -- file 丢弃工作区的修改
 1. 文件只是在工作区做了修改，还未添加进暂存区中，使用*git checkout -- file*，file将回到和版本库一模一样的状态。
 2. 文件已经添加到暂存区后，又做了修改，file将回到添加到暂存区后的状态。
 
-###### 撤销暂存区的修改
+#### 撤销暂存区的修改
 ```
 git reset HEAD file 撤销暂存区的修改
 ```
@@ -65,7 +63,26 @@ git commit -m ""
 git checkout -- test.txt
 ```
 
-### 创建与合并分支
+### 分支
+#### 分支原理
+HEAD严格来说不是指向提交，而是指向master，master才是指向提交的，所以，HEAD指向的就是当前分支。
+![head](https://raw.githubusercontent.com/fallinsilence/usedPictures/master/git/head.png)
+每次提交，master分支都会向前移动一步，这样，随着你不断提交，master分支的线也越来越长：
+当我们创建新的分支，例如dev时，Git新建了一个指针叫dev，指向master相同的提交，再把HEAD指向dev，就表示当前分支在dev上：
+![dev](https://github.com/fallinsilence/usedPictures/blob/master/git/dev.png?raw=true)
+你看，Git创建一个分支很快，因为除了增加一个dev指针，改改HEAD的指向，工作区的文件都没有任何变化！
+
+不过，从现在开始，对工作区的修改和提交就是针对dev分支了，比如新提交一次后，dev指针往前移动一步，而master指针不变：
+![dev-forward](https://github.com/fallinsilence/usedPictures/blob/master/git/dev_forward.png?raw=true)
+假如我们在dev上的工作完成了，就可以把dev合并到master上。Git怎么合并呢？最简单的方法，就是直接把master指向dev的当前提交，就完成了合并：
+![merge](https://github.com/fallinsilence/usedPictures/blob/master/git/merge.png?raw=true)
+
+所以Git合并分支也很快！就改改指针，工作区内容也不变！
+
+合并完分支后，甚至可以删除dev分支。删除dev分支就是把dev指针给删掉，删掉后，我们就剩下了一条master分支：
+![delete branch](https://github.com/fallinsilence/usedPictures/blob/master/git/delete_branch.png?raw=true)
+
+#### 分支常用命令
 + git branch 查看分支
 
 + git branch name 创建分支
@@ -142,6 +159,25 @@ git merge --no-ff -m "merge with no-ff" dev
 不用--no-ff，实际上只是将master的指针update成dev分支而已，用的还是dev的commit ID，而使用--no-ff之后，则是重新commit了一哈，有了新的commit ID.
 简单地说就是 -no-ff 模式进行了一次新的 git commit 操作。
 这也是为什么采用 -no-ff 模式要加入参数 -m 的原因。
+
+### 变基
+![rebase](https://github.com/fallinsilence/usedPictures/blob/master/git/rebase.png?raw=true)
+你可以提取在 C4 中引入的补丁和修改，然后在 C3 的基础上应用一次。 在 Git 中，这种操作就叫做 变基。 你可以使用 rebase 命令将提交到某一分支上的所有修改都移至另一分支上，就好像“重新播放”一样。
+在上面这个例子中，运行：
+```
+git checkout experiment
+git rebase master	将在experiment分支上的修改，应用到master分支
+```
+它的原理是首先找到这两个分支（即当前分支 experiment、变基操作的目标基底分支 master）的最近共同祖先 C2，然后对比当前分支相对于该祖先的历次提交，提取相应的修改并存为临时文件，然后将当前分支指向目标基底 C3, 最后以此将之前另存为临时文件的修改依序应用。（译注：写明了 commit id，以便理解，下同）
+
+现在回到 master 分支，进行一次快进合并。
+```
+git checkout matser
+git merge experiment
+```
+![ff](https://github.com/fallinsilence/usedPictures/blob/master/git/ff.png?raw=true)
+
+**总的原则是，只对尚未推送或分享给别人的本地修改执行变基操作清理历史，从不对已推送至别处的提交执行变基操作，这样，你才能享受到两种方式带来的便利。**
 
 ### 存储现场
 当你在当前分支上工作时，因为一些原因你需要切换分支，但此时你当前分支的工作并没有完成，所以你不能提交该分支修改的内容。
@@ -305,10 +341,6 @@ git push
 
 ### 注意
 1. 假设两个分支master和dev，都存在a文件，master分支不对a文件做更改，dev分支对a文件做了更改。这时，我们将dev分支合并到master分支，dev分支中的a文件内容就会覆盖master分支中的a文件内容。
-2. HEAD严格来说不是指向提交，而是指向master，master才是指向提交的，所以，HEAD指向的就是当前分支。
-![head](https://raw.githubusercontent.com/fallinsilence/usedPictures/master/git/head.png)
-每次提交，master分支都会向前移动一步，这样，随着你不断提交，master分支的线也越来越长：
-当我们创建新的分支，例如dev时，Git新建了一个指针叫dev，指向master相同的提交，再把HEAD指向dev，就表示当前分支在dev上：
-![dev](https://github.com/fallinsilence/usedPictures/blob/master/git/dev.png?raw=true)
+
 
 

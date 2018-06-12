@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Hero">
 <meta property="og:description" content="什么是shell　　系统kernel(核心)和硬件直接交互，核心发出指令控制硬件工作。我们控制shell，shell传送指令到kelnel，kelnel再控制硬件工作，从而我们控制了硬件工作。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-12T14:04:28.265Z">
+<meta property="og:updated_time" content="2018-06-12T14:10:37.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shell简介">
 <meta name="twitter:description" content="什么是shell　　系统kernel(核心)和硬件直接交互，核心发出指令控制硬件工作。我们控制shell，shell传送指令到kelnel，kelnel再控制硬件工作，从而我们控制了硬件工作。">
@@ -457,13 +457,12 @@
 <li><p>取消变量：unset 变量名</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">unset myname</div></pre></td></tr></table></figure>
 </li>
-<li><p>在当前shell设置的变量只能在当前shell有效，若想该变量能在其他子程序执行，则需要用export来使变量变成环境变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export myname</div></pre></td></tr></table></figure>
-</li>
-</ol>
+<li><p>在当前shell设置的变量只能在当前shell有效，若想该变量能在其他子程序执行，则需要用<code>export 变量名</code>来使变量变成环境变量</p>
 <blockquote>
 <p>什么是『子程序』呢？就是说，在我目前这个 shell 的情况下，去启用另一个新的 shell ，新的那个 shell 就是子程序啦！在一般的状态下，父程序的自定义变量是无法在子程序内使用的。但是透过 export 将变量变成环境变量后，就能够在子程序底下应用了！</p>
 </blockquote>
+</li>
+</ol>
 
       
     </div>

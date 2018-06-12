@@ -297,7 +297,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/12/shell/" itemprop="url">shell</a></h1>
+                <a class="post-title-link" href="/2018/06/12/shell/" itemprop="url">shell简介</a></h1>
         
 
         <div class="post-meta">
@@ -327,7 +327,7 @@
 
           
           
-             <span id="/2018/06/12/shell/" class="leancloud_visitors" data-flag-title="shell">
+             <span id="/2018/06/12/shell/" class="leancloud_visitors" data-flag-title="shell简介">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -352,7 +352,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  831
                 </span>
               
 
@@ -368,7 +368,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -391,7 +391,61 @@
       
         
           
-            
+            <h3 id="什么是shell"><a href="#什么是shell" class="headerlink" title="什么是shell"></a>什么是shell</h3><p>　　系统kernel(核心)和硬件直接交互，核心发出指令控制硬件工作。我们控制shell，shell传送指令到kelnel，kelnel再控制硬件工作，从而我们控制了硬件工作。<br>&lt;– more -&gt;</p>
+<blockquote>
+<p>kernel 是『核心』的意思，而 Shell 是『壳』的意思，呵呵！也就是说， shell<br>是最外头的咚咚！而 kernel 乃是最内层的的咚咚啦！核心是操作系统的最底层的东西！ 这个核心里头包<br>括了各种的支持硬件的工具！当然啰，如果你的硬件太新，而你的 kernel 并没有支持的话，那么很抱歉，<br>你的 Shell 能力再怎么强，也没有办法使硬件工作的！ 这样可以了解了吗？呵呵！没错！使计算机主机<br>工作的正是核心的任务，但是操作核心来替使用者工作的，却是 shell 喔！</p>
+</blockquote>
+<h3 id="etc-shells文件"><a href="#etc-shells文件" class="headerlink" title="/etc/shells文件"></a>/etc/shells文件</h3><p>　　系统中合法的shell要写入/etc/shells文件中。因为系统某些服务在运作过程中，会去检查使用者能够使用的shells，而这些shell是从/etc/shells文件中查出来的。</p>
+<blockquote>
+<p>一个用户如果要使用某个shell，/etc/shells文件必须存在这个shell</p>
+</blockquote>
+<h3 id="shell命令操作快捷键"><a href="#shell命令操作快捷键" class="headerlink" title="shell命令操作快捷键"></a>shell命令操作快捷键</h3><ul>
+<li>ctrl + u 从光标处<strong>向前</strong>删除指令串</li>
+<li>ctrl + k 从光标处<strong>向后</strong>删除指令串</li>
+<li>ctrl + a 让光标移动到整个指令串的<strong>最前面</strong></li>
+<li>ctrl + e 让光标移动到整个指令串的<strong>最后面</strong></li>
+</ul>
+<h3 id="shell变量"><a href="#shell变量" class="headerlink" title="shell变量"></a>shell变量</h3><ol>
+<li><p>创建一个变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myName=silence</div></pre></td></tr></table></figure>
+<p> <code>注意</code></p>
+<ul>
+<li>等号两边不能直接接空格</li>
+<li>变量名称只能是英文字母与数字，并且开头字符不能是数字</li>
+<li><p>变量内容若有空格可使用双引号或单引号将变量内容包裹起来，但有所区别:</p>
+<ul>
+<li><p>双引号内的特殊字符如$等，可以保有原来的特性(可以用$取变量的值)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var=&quot;lang is $LANG&quot;</div><div class="line">   echo $var</div><div class="line">   结果为：lang is zh_CN.UTF-8</div></pre></td></tr></table></figure>
+</li>
+<li><p>单引号内的特殊字符只当纯文本解析</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var=&quot;lang is $LANG&quot;</div><div class="line">echo $var</div><div class="line">结果为：lang is $LANG</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>可以使用转义字符 \ 将特殊符号（如Enter,$,\,空格符,’等）变成一般字符。</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">myname=hu\ gang 即可输入空格</div><div class="line"> echo $myname</div><div class="line"> 结果为：hu gang</div></pre></td></tr></table></figure>
+</li>
+<li><p>在执行指令时，需要读取其他指令的值时，可以使用反单引号<em>`指令`</em>或<em>$(指令)</em>。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">version=$(uname -r)</div><div class="line">   echo $version</div><div class="line">   输出结果为：3.10.0-229.e17.x86_64</div></pre></td></tr></table></figure>
+</li>
+<li><p>为变量扩增内容，可使用”$变量名” 或 ${变量名}累加内容<br> <code>为PATH变量追加:/home/bin</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">PATH=&quot;$PATH&quot;:/home/bin</div><div class="line">   PATH=$&#123;PATH&#125;:/home/bin</div></pre></td></tr></table></figure>
+</li>
+<li><p>通常大写字符为系统默认变量</p>
+</li>
+<li><p>取消变量：unset 变量名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">unset myname</div></pre></td></tr></table></figure>
+</li>
+<li><p>在当前shell设置的变量只能在当前shell有效，若想该变量能在其他子程序执行，则需要用export来使变量变成环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export myname</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>什么是『子程序』呢？就是说，在我目前这个 shell 的情况下，去启用另一个新的 shell ，新的那个 shell 就是子程序啦！在一般的状态下，父程序的自定义变量是无法在子程序内使用的。但是透过 export 将变量变成环境变量后，就能够在子程序底下应用了！</p>
+</blockquote>
+
           
         
       
@@ -1484,7 +1538,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">  |  博客全站共7.4k字</span>
+  <span class="post-count">  |  博客全站共8.2k字</span>
 </div>
 
 

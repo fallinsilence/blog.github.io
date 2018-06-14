@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="但行好事，莫问前程。">
+<meta name="description" content="env列出目前的shell环境下的所有环境变量与其内容1234567891011121314151617181920212223242526[root@linux ~]# envHOSTNAME=linux.dmtsai.tw &amp;lt;== 这部主机的主机名称SHELL=/bin/bash &amp;lt;== 目前这个环境下，使用的 Shell 是哪一个程序？TERM=xterm &amp;lt;== 这个终端">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="bash命令">
+<meta property="og:title" content="bash一些命令">
 <meta property="og:url" content="http://yoursite.com/2018/06/12/bash命令/index.html">
 <meta property="og:site_name" content="Hero">
-<meta property="og:description" content="但行好事，莫问前程。">
+<meta property="og:description" content="env列出目前的shell环境下的所有环境变量与其内容1234567891011121314151617181920212223242526[root@linux ~]# envHOSTNAME=linux.dmtsai.tw &amp;lt;== 这部主机的主机名称SHELL=/bin/bash &amp;lt;== 目前这个环境下，使用的 Shell 是哪一个程序？TERM=xterm &amp;lt;== 这个终端">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-12T14:04:45.730Z">
+<meta property="og:updated_time" content="2018-06-14T00:41:19.899Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="bash命令">
-<meta name="twitter:description" content="但行好事，莫问前程。">
+<meta name="twitter:title" content="bash一些命令">
+<meta name="twitter:description" content="env列出目前的shell环境下的所有环境变量与其内容1234567891011121314151617181920212223242526[root@linux ~]# envHOSTNAME=linux.dmtsai.tw &amp;lt;== 这部主机的主机名称SHELL=/bin/bash &amp;lt;== 目前这个环境下，使用的 Shell 是哪一个程序？TERM=xterm &amp;lt;== 这个终端">
 
 
 
@@ -142,7 +142,7 @@
 
 
 
-  <title>bash命令 | Hero</title>
+  <title>bash一些命令 | Hero</title>
   
 
 
@@ -296,7 +296,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">bash命令</h1>
+          <h1 class="post-title" itemprop="name headline">bash一些命令</h1>
         
 
         <div class="post-meta">
@@ -348,7 +348,7 @@
 
           
           
-             <span id="/2018/06/12/bash命令/" class="leancloud_visitors" data-flag-title="bash命令">
+             <span id="/2018/06/12/bash命令/" class="leancloud_visitors" data-flag-title="bash一些命令">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -373,7 +373,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  2,117
                 </span>
               
 
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  8
                 </span>
               
             </div>
@@ -410,7 +410,127 @@
       
 
       
-        
+        <h3 id="env"><a href="#env" class="headerlink" title="env"></a><code>env</code></h3><p>列出目前的shell环境下的所有环境变量与其内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">[root@linux ~]# env</div><div class="line">HOSTNAME=linux.dmtsai.tw &lt;== 这部主机的主机名称</div><div class="line"></div><div class="line">SHELL=/bin/bash &lt;== 目前这个环境下，使用的 Shell 是哪一个程序？</div><div class="line"></div><div class="line">TERM=xterm &lt;== 这个终端机使用的环境是什么类型</div><div class="line"></div><div class="line">HISTSIZE=1000 &lt;== 这个就是『记录指令的笔数』在 FC4 预设可记录 1000 笔</div><div class="line"></div><div class="line">USER=root &lt;== 使用者的名称啊！</div><div class="line"></div><div class="line">ENV=/root/.bashrc &lt;== 使用的个人环境设定档</div><div class="line"></div><div class="line">MAIL=/var/spool/mail/root &lt;== 这个使用者所取用的 mailbox 位置</div><div class="line"></div><div class="line">PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/root/bin &lt;== 不再多讲啊！是执行文件指令搜寻路径</div><div class="line"></div><div class="line">INPUTRC=/etc/inputrc &lt;== 与键盘按键功能有关。可以设定特殊按键！</div><div class="line"></div><div class="line">PWD=/root &lt;== 目前使用者所在的工作目录 (利用 pwd 取出！)</div><div class="line"></div><div class="line">LANG=en_US.UTF-8 &lt;== 这个与语系有关，底下会再介绍！</div><div class="line"></div><div class="line">HOME=/root &lt;== 这个使用者的家目录啊！</div><div class="line"></div><div class="line">_=/bin/env &lt;== 上一次使用的指令的最后一个参数(或指令本身)</div></pre></td></tr></table></figure></p>
+<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><p>观察所有变量</p>
+<blockquote>
+<p>bash不只有环境变量，还有一些与bash操作接口有关的变量，以及用户自定义的变量存在，用set可以全部显示出来。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">BASH=/bin/bash &lt;== bash 的主程序放置路径</div><div class="line"></div><div class="line">COLORS=/etc/DIR_COLORS.xterm &lt;== 使用的颜色纪录档案</div><div class="line"></div><div class="line">COLUMNS=115 &lt;== 在目前的终端机环境下，使用的字段有几个字符长度</div><div class="line"></div><div class="line">HISTFILE=/root/.bash_history &lt;== 历史命令记录的放置档案，隐藏档</div><div class="line"></div><div class="line">HISTFILESIZE=1000 &lt;== 存起来(与上个变量有关)的档案之指令的最大纪录笔数。</div><div class="line"></div><div class="line">HISTSIZE=1000 &lt;== 目前环境下，可记录的历史命令最大笔数。</div><div class="line"></div><div class="line">HOSTTYPE=i386 &lt;== 主机安装的软件主要类型。我们用的是 i386 兼容机器软件</div><div class="line"></div><div class="line">IFS=$&apos; \t\n&apos; &lt;== 预设的分隔符</div><div class="line"></div><div class="line">LINES=35 &lt;== 目前的终端机下的最大行数</div><div class="line"></div><div class="line">MACHTYPE=i386-redhat-linux-gnu &lt;== 安装的机器类型</div><div class="line"></div><div class="line">MAILCHECK=60 &lt;== 与邮件有关。每 60 秒去扫瞄一次信箱有无新信！</div><div class="line"></div><div class="line">OLDPWD=/home &lt;== 上个工作目录。我们可以用 cd - 来取用这个变量。</div><div class="line"></div><div class="line">OSTYPE=linux-gnu &lt;== 操作系统的类型！</div><div class="line"></div><div class="line">PS1=&apos;[\u@\h \W]\$ &apos; &lt;== PS1 就厉害了。这个是命令提示字符，也就是我们常见的[root@linux ~]# 或 [dmtsai ~]$ 的设定值啦！可以更动的！</div><div class="line"></div><div class="line">$ &lt;== 目前这个 shell 所使用的 PID</div><div class="line"></div><div class="line">? &lt;== 刚刚执行完指令的回传值</div></pre></td></tr></table></figure>
+<ol>
+<li><p>PS1：提示字符(<code>[root@linux ~]#</code>)的设定</p>
+<ul>
+<li><p>\d ：代表日期，格式为 Weekday Month Date，例如 “Mon Aug 1”</p>
+</li>
+<li><p>\H ：完整的主机名称。举例来说，鸟哥的练习机 linux.dmtsai.tw ，那么这个主机名称就是 linux.dmtsai.tw</p>
+</li>
+<li><p>\h ：仅取主机名称的第一个名字。以上述来讲，就是 linux 而已， .dmtsai.tw 被省略。</p>
+</li>
+<li><p>\t ：显示时间，为 24 小时格式，如： HH:MM:SS</p>
+</li>
+<li><p>\T ：显示时间， 12 小时的时间格式！</p>
+</li>
+<li><p>\A ：显示时间， 24 小时格式， HH:MM</p>
+</li>
+<li><p>\u ：目前使用者的账号名称；</p>
+</li>
+<li><p>\v ： BASH 的版本信息；</p>
+</li>
+<li><p>\w ：完整的工作目录名称。家目录会以 ~ 取代；</p>
+</li>
+<li><p>\W ：利用 basename 取得工作目录名称，所以仅会列出最后一个目录名。</p>
+</li>
+<li><p># ：下达的第几个指令。</p>
+</li>
+<li><p>\$ ：提示字符，如果是 root 时，提示字符为 # ，否则就是 $ 啰～</p>
+</li>
+</ul>
+</li>
+<li><p>$:关于本shell的PID<br>代表的是目前shell的线程代号，即pid。</p>
+</li>
+<li><p>?：关于上个执行指令的回传值<br>当我们执行某些指令时，这些指令都会回传一个执行后的代码。一般来说，<strong>如果成功的执行该指令，则会回传一个0值</strong>，如果执行过程发生错误，就会回传错误代码，一般为非0的数值。（可以根据这个代码搜寻错误的原因）</p>
+</li>
+</ol>
+<h3 id="export-将自定义的变量转换为环境变量"><a href="#export-将自定义的变量转换为环境变量" class="headerlink" title="export:将自定义的变量转换为环境变量"></a><code>export</code>:将自定义的变量转换为环境变量</h3><ul>
+<li><p>环境变量和自定义变量的区别：该变量是否会被子程序所继续引用。</p>
+</li>
+<li><p>子程序仅仅会继承父程序的环境变量，不会继承父程序的自定义变量。</p>
+</li>
+<li><p>用法： <code>export 变量名称</code></p>
+</li>
+<li><p>为什么环境变量的数据可以被子程序所应用呢？这是因为内存配置的关系！</p>
+<blockquote>
+<p>• 当启动一个 shell ，操作系统分配一记忆区块给 shell 使用，此区域之变量可以让子程序存取；</p>
+<p>• 利用 export 功能，可以让变量的内容写到上述的记忆区块当中(环境变量)；</p>
+<p>• 当加载另一个 shell 时 (亦即启动子程序，而离开原本的父程序了)，子 shell 可以将父 shell的环境变量所在的记忆区块导入自己的环境变量区块当中</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="locale：影响显示结果的语系变量"><a href="#locale：影响显示结果的语系变量" class="headerlink" title="locale：影响显示结果的语系变量"></a><code>locale</code>：影响显示结果的语系变量</h3><ul>
+<li><p>设置了LANG或者是LC_ALL时，其他的语系变量就会被这两个变量所取代。</p>
+</li>
+<li><p>整体系统默认的语系设置文件：/etc/locale.conf</p>
+</li>
+</ul>
+<h3 id="read：接收键盘的输入，把输入的值赋给变量"><a href="#read：接收键盘的输入，把输入的值赋给变量" class="headerlink" title="read：接收键盘的输入，把输入的值赋给变量"></a><code>read</code>：接收键盘的输入，把输入的值赋给变量</h3><ol>
+<li><p>用法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root@linux ~]# read [-pt] variable</div><div class="line">参数：</div><div class="line">-p ：后面可以接提示字符！</div><div class="line">-t ：后面可以接等待的『秒数！』这个比较有趣～不会一直等待使用者啦！</div></pre></td></tr></table></figure>
+</li>
+<li><p>例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">范例一：让使用者由键盘输入一内容，将该内容变成 atest 变量</div><div class="line">[root@linux ~]# read atest</div><div class="line">This is a test</div><div class="line">[root@linux ~]# echo $atest</div><div class="line">This is a test</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">范例二：提示使用者 30 秒内输入自己的大名，将该输入字符串做成 named 变量</div><div class="line">[root@linux ~]# read -p &quot;Please keyin your name: &quot; -t 30 named</div><div class="line">Please keyin your name: VBird Tsai</div><div class="line">[root@linux ~]# echo $named</div><div class="line">VBird Tsai</div></pre></td></tr></table></figure>
+<h3 id="declare-typeset：一样的功能，就是宣告变量的类型"><a href="#declare-typeset：一样的功能，就是宣告变量的类型" class="headerlink" title="declare/typeset：一样的功能，就是宣告变量的类型"></a><code>declare</code>/<code>typeset</code>：一样的功能，就是宣告变量的类型</h3><p>　如果declare后面没有接任何参数，就是和使用set效果一样。</p>
+<ol>
+<li><p>用法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">declare [-aixr] variable</div><div class="line">参数：</div><div class="line">-a ：将后面的 variable 定义成为数组 (array)</div><div class="line">-i ：将后面接的 variable 定义成为整数数字 (integer)-x ：用法与 export 一样，就是将后面的 variable 变成环境变量；</div><div class="line">-r ：将一个 variable 的变量设定成为 readonly ，该变量不可被更改内容，也不能 unset</div></pre></td></tr></table></figure>
+</li>
+<li><p>例子</p>
+<blockquote>
+<p>由于在默认的情况下，bash对变量有几个基本的定义</p>
+<blockquote>
+<ul>
+<li>变量类型默认为字符串</li>
+<li>Bash环境中的数值运算，预设最多只能到达整数形态，所以1/3结果为0</li>
+</ul>
+</blockquote>
+</blockquote>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">范例一：让变量 sum 进行 100+300+50 的加总结果</div><div class="line">[root@linux ~]# sum=100+300+50</div><div class="line">[root@linux ~]# echo $sum</div><div class="line">100+300+50 &lt;==咦！怎么没有帮我计算加总？因为这是文字型态的变量属性啊！</div><div class="line">[root@linux ~]# declare -i sum=100+300+50</div><div class="line">[root@linux ~]# echo $sum</div><div class="line">450</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">范例二：将 sum 变成环境变量</div><div class="line">[root@linux ~]# declare -x sum</div></pre></td></tr></table></figure>
+</li>
+<li><p>取消某一个属性</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">declare +x sum 将-变成+可以取消某一个属性</div></pre></td></tr></table></figure>
+</li>
+<li><p>数组</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">   范例：设定var[1] ～ var[3] 变量。</div><div class="line">[root@linux ~]# var[1]=&quot;small min&quot;</div><div class="line">[root@linux ~]# var[2]=&quot;big min&quot;</div><div class="line">[root@linux ~]# var[3]=&quot;nice min&quot;</div><div class="line">[root@linux ~]# echo &quot;$&#123;var[1]&#125;, $&#123;var[2]&#125;, $&#123;var[3]&#125;</div><div class="line">   $&#123;数组&#125; 的方式来读取数组变量的值</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>###　ulimit：限制用户的某些系统资源</p>
+<ol>
+<li><p>用法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[root@linux ~]# ulimit [-SHacdflmnpstuv] [配额]</div><div class="line">参数：</div><div class="line">-H ：hard limit ，严格的设定，必定不能超过设定的值；</div><div class="line">-S ：soft limit ，警告的设定，可以超过这个设定值，但是会有警告讯息，并且，还是无法超过 hard limit 的喔！也就是说，假设我的 soft limit为 80 ， hard limit 为 100 ，那么我的某个资源可以用到 90 ，可以超过 80 ，还是无法超过 100 ，而且在 80~90 之间，会有警告讯息的意思。</div><div class="line">-a ：列出所有的限制额度；</div><div class="line">-c ：可建立的最大核心档案容量 (core files)</div><div class="line">-d ：程序数据可使用的最大容量</div><div class="line">-f ：此 shell 可以建立的最大档案容量 (一般可能设定为 2GB)单位为 Kbytes</div><div class="line">-l ：可用于锁定 (lock) 的内存量</div><div class="line">-p ：可用以管线处理 (pipe) 的数量</div><div class="line">-t ：可使用的最大 CPU 时间 (单位为秒)</div><div class="line">-u ：单一使用者可以使用的最大程序(process)数量。</div></pre></td></tr></table></figure>
+</li>
+<li><p>例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">范例一：列出所有的限制数据</div><div class="line">[root@linux ~]# ulimit -a</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">范例二：限制使用者仅能建立 1MBytes 以下的容量的档案</div><div class="line">[root@linux ~]# ulimit -f 1024</div></pre></td></tr></table></figure>
+<ol>
+<li>tips</li>
+</ol>
+<ul>
+<li>想要复原ulimit设定最简单的方法就是注销再登入</li>
+<li>一般身份使用者如果以ulimit设定了-f的文件大小，那么他只能<code>继续减小文件容量，不能增加文件容量</code></li>
+</ul>
+<h3 id="alias-别名系统"><a href="#alias-别名系统" class="headerlink" title="alias:别名系统"></a>alias:别名系统</h3><ul>
+<li><p>创建别名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alias lm=&apos;ls -a | more&apos;</div></pre></td></tr></table></figure>
+</li>
+<li><p>取消别名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">unalias lm</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="history：历史命令"><a href="#history：历史命令" class="headerlink" title="history：历史命令"></a>history：历史命令</h3>
       
     </div>
     
@@ -529,8 +649,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -604,6 +733,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#env"><span class="nav-number">1.</span> <span class="nav-text">env</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set"><span class="nav-number">2.</span> <span class="nav-text">set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#export-将自定义的变量转换为环境变量"><span class="nav-number">3.</span> <span class="nav-text">export:将自定义的变量转换为环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#locale：影响显示结果的语系变量"><span class="nav-number">4.</span> <span class="nav-text">locale：影响显示结果的语系变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#read：接收键盘的输入，把输入的值赋给变量"><span class="nav-number">5.</span> <span class="nav-text">read：接收键盘的输入，把输入的值赋给变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#declare-typeset：一样的功能，就是宣告变量的类型"><span class="nav-number">6.</span> <span class="nav-text">declare/typeset：一样的功能，就是宣告变量的类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alias-别名系统"><span class="nav-number">7.</span> <span class="nav-text">alias:别名系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#history：历史命令"><span class="nav-number">8.</span> <span class="nav-text">history：历史命令</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -638,7 +783,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">  |  博客全站共8.2k字</span>
+  <span class="post-count">  |  博客全站共10.6k字</span>
 </div>
 
 

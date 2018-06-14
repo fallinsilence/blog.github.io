@@ -103,7 +103,7 @@
 <meta property="og:description" content="bash的进站与欢迎讯息 /etc/issue本机登录时显示的欢迎信息  /etc/issue.net远程登录时显示的欢迎信息">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/fallinsilence/usedPictures/blob/master/Linux/login_shell.png?raw=true">
-<meta property="og:updated_time" content="2018-06-14T02:10:35.494Z">
+<meta property="og:updated_time" content="2018-06-14T02:19:24.079Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux一些配置文件">
 <meta name="twitter:description" content="bash的进站与欢迎讯息 /etc/issue本机登录时显示的欢迎信息  /etc/issue.net远程登录时显示的欢迎信息">
@@ -374,7 +374,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  780
+                  795
                 </span>
               
 
@@ -421,7 +421,7 @@
 <li><p>/etc/motd<br>每个用户登录后都能看到的讯息</p>
 </li>
 </ol>
-<h3 id="bash的环境配置文件"><a href="#bash的环境配置文件" class="headerlink" title="bash的环境配置文件"></a>bash的环境配置文件</h3><h4 id="login-shell-与-non-login-shell"><a href="#login-shell-与-non-login-shell" class="headerlink" title="login shell 与 non-login shell"></a>login shell 与 non-login shell</h4><p>重点在于有没有登入bash</p>
+<h3 id="bash的环境配置文件"><a href="#bash的环境配置文件" class="headerlink" title="bash的环境配置文件"></a>bash的环境配置文件</h3><h4 id="login-shell-与-non-login-shell"><a href="#login-shell-与-non-login-shell" class="headerlink" title="login shell 与 non-login shell"></a>login shell 与 non-login shell</h4><p>重点在于有没有输入用户名密码来登入bash</p>
 <ul>
 <li>login shell：取得bash时需要完整的登入流程的。从tty1-tty6登录</li>
 <li>non-login shell:取得bash接口的方法不需要重复登入的举动，举例来说<ul>
@@ -432,7 +432,7 @@
 </ul>
 <h4 id="login-shell-会读取两个文件"><a href="#login-shell-会读取两个文件" class="headerlink" title="login shell 会读取两个文件"></a>login shell 会读取两个文件</h4><ul>
 <li>/etc/profile：这是系统整体的设定，你最好不要更改这个文件</li>
-<li>~/.bash_profile或~/.bash_login或~/.profile：术语使用者个人设定文件。</li>
+<li>~/.bash_profile或~/.bash_login或~/.profile：术语使用者个人设定文件。<br><strong>可能引入~/.bashrc文件</strong></li>
 </ul>
 <p>login shell读取配置文件流程<br><img src="https://github.com/fallinsilence/usedPictures/blob/master/Linux/login_shell.png?raw=true" alt="login_shell"></p>
 <h4 id="etc-profile"><a href="#etc-profile" class="headerlink" title="/etc/profile"></a>/etc/profile</h4><p>　　这个配置文件可以利用使用者的标识符(UID) 来决定很多重要的变量数据，这也是每个使用者登入取得bash时一定会读取的配置文件!所以如果你想要帮所有使用者设定整体环境，那就是改这里啰!不过，没事还是不要随便改这个文件喔这个文件设定的变量主要有:</p>
@@ -705,7 +705,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">  |  博客全站共12.1k字</span>
+  <span class="post-count">  |  博客全站共12.5k字</span>
 </div>
 
 

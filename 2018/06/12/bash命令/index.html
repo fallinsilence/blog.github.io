@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Hero">
 <meta property="og:description" content="env：列出目前的shell环境下的所有环境变量与其内容1234567891011121314151617181920212223242526[root@linux ~]# envHOSTNAME=linux.dmtsai.tw &amp;lt;== 这部主机的主机名称SHELL=/bin/bash &amp;lt;== 目前这个环境下，使用的 Shell 是哪一个程序？TERM=xterm &amp;lt;== 这个终">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-14T02:11:08.678Z">
+<meta property="og:updated_time" content="2018-06-14T02:41:01.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bash一些命令">
 <meta name="twitter:description" content="env：列出目前的shell环境下的所有环境变量与其内容1234567891011121314151617181920212223242526[root@linux ~]# envHOSTNAME=linux.dmtsai.tw &amp;lt;== 这部主机的主机名称SHELL=/bin/bash &amp;lt;== 目前这个环境下，使用的 Shell 是哪一个程序？TERM=xterm &amp;lt;== 这个终">
@@ -373,7 +373,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,790
+                  3,227
                 </span>
               
 
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  11
+                  12
                 </span>
               
             </div>
@@ -550,7 +550,101 @@
 <li>由bash内建的（builtin）指令来执行</li>
 <li>透过$PATH这个变量的顺序搜寻到的第一个指令来执行</li>
 </ol>
-<h3 id="stty-查阅按键内容"><a href="#stty-查阅按键内容" class="headerlink" title="stty:查阅按键内容"></a>stty:查阅按键内容</h3>
+<h3 id="stty-查阅按键内容"><a href="#stty-查阅按键内容" class="headerlink" title="stty:查阅按键内容"></a>stty:查阅按键内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[root@linux ~]# stty [-a]</div><div class="line">参数：</div><div class="line">-a ：将目前所有的 stty 参数列出来；</div><div class="line">范例：列出所有的按键与按键内容</div><div class="line">[root@linux ~]# stty -a</div><div class="line">speed 38400 baud; rows 40; columns 80; line = 0;</div><div class="line">intr = ^C; quit = ^\; erase = ^?; kill = ^U; eof = ^D; eol = ;</div><div class="line">eol2 = ; start = ^Q; stop = ^S; susp = ^Z; rprnt = ^R; werase</div><div class="line">= ^W; lnext = ^V; flush = ^O; min = 1; time = 0;</div></pre></td></tr></table></figure>
+<ul>
+<li>^是Ctrl的意思。</li>
+<li>intr : 送出一个interrupt（中断）信号给目前正在运行的程序，就是终止</li>
+<li>eof : End of file 的意思，代表『结束输入』</li>
+<li>erase : 向后删除字符</li>
+<li>kill : 删除在目前指令列上的所有文字</li>
+<li>quit : 送出一个 quit 的讯号给目前正在 run 的程序</li>
+<li>start : 在某个程序停止后，重新启动他的 output</li>
+<li>stop : 停止目前屏幕的输出</li>
+<li>susp : 送出一个 terminal stop 的讯号给正在 run 的程序。</li>
+</ul>
+<h3 id="通配符与特殊符号"><a href="#通配符与特殊符号" class="headerlink" title="通配符与特殊符号"></a>通配符与特殊符号</h3><table>
+<thead>
+<tr>
+<th>通配符和特殊符号</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>代表0个或多个字符（或数字）</td>
+</tr>
+<tr>
+<td>?</td>
+<td>代表『一定有』一个字母</td>
+</tr>
+<tr>
+<td>#</td>
+<td>批注，这个最常被使用在 script 当中，视为说明！</td>
+</tr>
+<tr>
+<td>\</td>
+<td>跳脱符号，将『特殊字符或万用字符』还原成一般字符</td>
+</tr>
+<tr>
+<td>&#124;</td>
+<td>分隔两个管线命令的界定</td>
+</tr>
+<tr>
+<td>;</td>
+<td>连续性命令的界定（注意！与管线命令并不相同）</td>
+</tr>
+<tr>
+<td>~</td>
+<td>使用者的家目录</td>
+</tr>
+<tr>
+<td>$</td>
+<td>亦即是变量之前需要加的变量取代值</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>将指令变成后台工作</td>
+</tr>
+<tr>
+<td>!</td>
+<td>逻辑运算意义上的『非』 not 的意思！</td>
+</tr>
+<tr>
+<td>/</td>
+<td>路径分隔的符号</td>
+</tr>
+<tr>
+<td>&gt;, &gt;&gt;</td>
+<td>输出导向，分别是『取代』与『累加』</td>
+</tr>
+<tr>
+<td>‘</td>
+<td>单引号，不具有变量置换的功能</td>
+</tr>
+<tr>
+<td>“</td>
+<td>具有变量置换的功能！</td>
+</tr>
+<tr>
+<td>` `</td>
+<td>两个『 ` 』中间为可以先执行的指令</td>
+</tr>
+<tr>
+<td>( )</td>
+<td>在中间为子 shell 的起始与结束</td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>在中间为字符的组合</td>
+</tr>
+<tr>
+<td>{ }</td>
+<td>在中间为命令区块的组合</td>
+</tr>
+</tbody>
+</table>
+
       
     </div>
     
@@ -766,7 +860,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#env：列出目前的shell环境下的所有环境变量与其内容"><span class="nav-number">1.</span> <span class="nav-text">env：列出目前的shell环境下的所有环境变量与其内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set：观察所有变量"><span class="nav-number">2.</span> <span class="nav-text">set：观察所有变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#export：将自定义的变量转换为环境变量"><span class="nav-number">3.</span> <span class="nav-text">export：将自定义的变量转换为环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#locale：影响显示结果的语系变量"><span class="nav-number">4.</span> <span class="nav-text">locale：影响显示结果的语系变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#read：接收键盘的输入，把输入的值赋给变量"><span class="nav-number">5.</span> <span class="nav-text">read：接收键盘的输入，把输入的值赋给变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#declare-typeset：一样的功能，就是宣告变量的类型"><span class="nav-number">6.</span> <span class="nav-text">declare/typeset：一样的功能，就是宣告变量的类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alias-别名系统"><span class="nav-number">7.</span> <span class="nav-text">alias:别名系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#history：历史命令"><span class="nav-number">8.</span> <span class="nav-text">history：历史命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指令的搜寻顺序"><span class="nav-number">9.</span> <span class="nav-text">指令的搜寻顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stty-查阅按键内容"><span class="nav-number">10.</span> <span class="nav-text">stty:查阅按键内容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#env：列出目前的shell环境下的所有环境变量与其内容"><span class="nav-number">1.</span> <span class="nav-text">env：列出目前的shell环境下的所有环境变量与其内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set：观察所有变量"><span class="nav-number">2.</span> <span class="nav-text">set：观察所有变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#export：将自定义的变量转换为环境变量"><span class="nav-number">3.</span> <span class="nav-text">export：将自定义的变量转换为环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#locale：影响显示结果的语系变量"><span class="nav-number">4.</span> <span class="nav-text">locale：影响显示结果的语系变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#read：接收键盘的输入，把输入的值赋给变量"><span class="nav-number">5.</span> <span class="nav-text">read：接收键盘的输入，把输入的值赋给变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#declare-typeset：一样的功能，就是宣告变量的类型"><span class="nav-number">6.</span> <span class="nav-text">declare/typeset：一样的功能，就是宣告变量的类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alias-别名系统"><span class="nav-number">7.</span> <span class="nav-text">alias:别名系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#history：历史命令"><span class="nav-number">8.</span> <span class="nav-text">history：历史命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指令的搜寻顺序"><span class="nav-number">9.</span> <span class="nav-text">指令的搜寻顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stty-查阅按键内容"><span class="nav-number">10.</span> <span class="nav-text">stty:查阅按键内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通配符与特殊符号"><span class="nav-number">11.</span> <span class="nav-text">通配符与特殊符号</span></a></li></ol></div>
             
 
           </div>
@@ -807,7 +901,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">  |  博客全站共12.1k字</span>
+  <span class="post-count">  |  博客全站共12.5k字</span>
 </div>
 
 

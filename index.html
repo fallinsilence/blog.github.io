@@ -278,6 +278,233 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/14/重定向和管道/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Silence">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tou.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hero">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/14/重定向和管道/" itemprop="url">重定向和管道</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T10:41:58+08:00">
+                2018-06-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/06/14/重定向和管道/" class="leancloud_visitors" data-flag-title="重定向和管道">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,555
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>重定向和管线是Linux的精髓！</p>
+<h3 id="数据流重定向"><a href="#数据流重定向" class="headerlink" title="数据流重定向"></a>数据流重定向</h3><ol>
+<li>标准输入（stdin）:代码为0，使用&lt;（覆盖）或&lt;&lt;（追加）</li>
+<li>标准输出（stdout）:代码为1，使用&gt;或&gt;&gt;</li>
+<li>标准错误输出(stderr)：代码为2，使用2&gt;或2&gt;&gt;</li>
+</ol>
+<ul>
+<li><p>将stdout和stderr输出到不同的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find /home -name .bashrc &gt; list_right 2&gt; list_error</div></pre></td></tr></table></figure>
+</li>
+<li><p>将stdout和stderr存入相同的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">find /home -name testing &gt; list 2&gt; list &lt;==错误写法</div><div class="line">find /home -name testing &gt; list 2&gt;&amp;1 &lt;==正确写法</div><div class="line">find /home -name testing &amp;&gt; list &lt;==正确写法</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>错误原因是：由于两股数据同时写入同一个文件，又没有使用特殊的语法，此时两股数据可能会交叉写入该文件中，造成次序的混乱。<br>2&gt;&amp;1 将2&gt;转到 1&gt;去（将标准错误输出重定向到标准输出的位置）</p>
+<ul>
+<li>将标准输出转到标准错误输出<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo &quot;error message&quot; 1&gt;&amp;2</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="黑洞装置：-dev-null"><a href="#黑洞装置：-dev-null" class="headerlink" title="黑洞装置：/dev/null"></a>黑洞装置：/dev/null</h4><p>将不需要的输出信息重定向到/dev/null，让输出信息消失。</p>
+<h4 id="lt-和-lt-lt"><a href="#lt-和-lt-lt" class="headerlink" title="&lt;和&lt;&lt;"></a>&lt;和&lt;&lt;</h4><pre><code>+ &lt; ：用文件内容代替键盘输入的数据
++ &lt;&lt;: 代表的是结束的输入字符的意思
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cat &gt; catfile &lt;&lt; &quot;eof&quot;</div><div class="line">   键盘输入时，输入eof按回车，不会换行，而是结束输入</div></pre></td></tr></table></figure>
+<h3 id="多条命令如何执行"><a href="#多条命令如何执行" class="headerlink" title="多条命令如何执行"></a>多条命令如何执行</h3><p>命令1 ; 命令2  按照顺序执行<br>命令1 &amp;&amp; 命令2  前面命令执行结果为成功<code>($?=0)</code>才会执行后面的命令（根据命令执行后的返回值——$?）<br>命令1 || 命令2    前面命令执行结果为错误<code>($?!=0)</code>才会执行后面的命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">我不清楚/tmp/abc是否存在，但就是要建立/tmp/abc/hehe文件</div><div class="line">ls /tmp/abc || mkdir /tmp/abc &amp;&amp; touch /tmp/abc/hehe</div></pre></td></tr></table></figure>
+<ul>
+<li>一般用法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">command1 &amp;&amp; command2 || command3</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>一般来说，command2 与 command3 会放置肯定可以执行成功的指令。</p>
+<h3 id="管道："><a href="#管道：" class="headerlink" title="管道：|"></a>管道：|</h3><p>　　管道命令仅能处理前一个指令传来的正确信息，即standard output。<br>　　他将前一个命令的标准输出当作后一个命令的标准输入（后一个命令需要支持管道）。<br><img src="https://github.com/fallinsilence/usedPictures/blob/master/Linux/pipe.png?raw=true" alt="pipe"></p>
+<h3 id="管道常用命令"><a href="#管道常用命令" class="headerlink" title="管道常用命令"></a>管道常用命令</h3><h4 id="cut：-将一段信息的某一部分切出来，以行为单位"><a href="#cut：-将一段信息的某一部分切出来，以行为单位" class="headerlink" title="cut： 将一段信息的某一部分切出来，以行为单位"></a>cut： 将一段信息的某一部分<code>切出来</code>，以行为单位</h4><p>参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">cut -d&apos;分隔字符&apos; -f fields</div><div class="line">cut -c 字符区间</div><div class="line">   </div><div class="line">   -d ：后面接分隔字符。与 -f 一起使用；</div><div class="line">   -f ：依据 -d 的分隔字符将一段讯息分割成为数段，用 -f 取出第几段的意思；</div><div class="line">   -c ：以字符 (characters) 的单位取出固定字符区间</div></pre></td></tr></table></figure></p>
+<p>范例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">echo $PATH | cut -d &apos;:&apos; -f 5 以:为分隔符切割每一行数据，取出每一行的第5个数据</div><div class="line">-f 3,5 第3行和第5行</div><div class="line">-f 3-5 第3行到第5行</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">将 export 输出的讯息，取得第 12 字符以后的所有字符串</div><div class="line">export | cut -c 12-</div></pre></td></tr></table></figure>
+<h4 id="grep-输出符合条件的每一行数据"><a href="#grep-输出符合条件的每一行数据" class="headerlink" title="grep:输出符合条件的每一行数据"></a>grep:输出符合条件的每一行数据</h4><p>参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">grep [-acinv] &apos;搜寻字符串&apos; filename参数：</div><div class="line">-a ：将 binary 档案以 text 档案的方式搜寻数据</div><div class="line">-c ：计算找到 &apos;搜寻字符串&apos; 的次数</div><div class="line">-i ：忽略大小写的不同，所以大小写视为相同</div><div class="line">-n ：顺便输出行号</div><div class="line">-v ：反向选择，亦即显示出没有 &apos;搜寻字符串&apos; 内容的那一行！</div></pre></td></tr></table></figure></p>
+<p>范例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">范例一：将 last 当中，有出现 root 的那一行就取出来；</div><div class="line">[root@linux ~]# last | grep &apos;root&apos;</div><div class="line">范例二：与范例一相反，只要没有 root 的就取出！</div><div class="line">[root@linux ~]# last | grep -v &apos;root</div></pre></td></tr></table></figure></p>
+<h4 id="sort-排序"><a href="#sort-排序" class="headerlink" title="sort:排序"></a>sort:排序</h4><p>参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">sort [-fbMnrtuk] [file or stdin]</div><div class="line"></div><div class="line">-f ：忽略大小写的差异，例如 A 与 a 视为编码相同；</div><div class="line">-b ：忽略最前面的空格符部分；</div><div class="line">-M ：以月份的名字来排序，例如 JAN, DEC 等等的排序方法；</div><div class="line">-n ：使用『纯数字』进行排序(预设是以文字型态来排序的)；</div><div class="line">-r ：反向排序；</div><div class="line">-u ：就是 uniq ，相同的数据中，仅出现一行代表；</div><div class="line">-t ：分隔符，预设是 tab 键；</div><div class="line">-k ：以那个区间 (field) 来进行排序的意思，</div></pre></td></tr></table></figure></p>
+<p>范例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">范例一：个人账号都记录在 /etc/passwd 下，请将账号进行排序。</div><div class="line">[root@linux ~]# cat /etc/passwd | sort</div><div class="line">adm:x:3:4:adm:/var/adm:/sbin/nologin</div><div class="line">apache:x:48:48:Apache:/var/www:/sbin/nologin</div><div class="line">bin:x:1:1:bin:/bin:/sbin/nologin</div><div class="line">daemon:x:2:2:daemon:/sbin:/sbin/nologin</div><div class="line"># 我省略很多的输出～由上面的数据看起来， sort 是预设『以第一个』数据来排序，</div><div class="line"># 而且预设是以『文字』型态来排序的喔！所以由 a 开始排到最后啰！</div><div class="line"></div><div class="line">范例二：/etc/passwd 内容是以 : 来分隔的，我想以第三栏来排序，该如何？</div><div class="line">[root@linux ~]# cat /etc/passwd | sort -t &apos;:&apos; -k 3</div><div class="line">root:x:0:0:root:/root:/bin/bash</div><div class="line">iiimd:x:100:101:IIIMF server:/usr/lib/iiim:/sbin/nologin</div><div class="line">uucp:x:10:14:uucp:/var/spool/uucp:/sbin/nologin</div><div class="line">operator:x:11:0:operator:/root:/sbin/nologin</div><div class="line">bin:x:1:1:bin:/bin:/sbin/nologin</div><div class="line">games:x:12:100:games:/usr/games:/sbin/nologin</div><div class="line"># 看到输出部分的第三行了吧？怎么会这样排列啊？呵呵！没错啦～</div><div class="line"># 如果是以文字型态来排序的话，原本就会是这样，想要使用数字排序：</div><div class="line"># cat /etc/passwd | sort -t &apos;:&apos; -k 3 -n</div><div class="line"># 这样才行啊！用那个 -n 来告知 sort 以数字来排序啊！</div><div class="line"></div><div class="line">范例三：利用 last ，将输出的数据仅取账号，并加以排序</div><div class="line">[root@linux ~]# last | cut -d &apos; &apos; -f1 | sort</div></pre></td></tr></table></figure></p>
+<h4 id="uniq：去除重复的项，并可以显示统计次数"><a href="#uniq：去除重复的项，并可以显示统计次数" class="headerlink" title="uniq：去除重复的项，并可以显示统计次数"></a>uniq：去除重复的项，并可以显示统计次数</h4><p>参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">uniq [-ic]</div><div class="line">-i: 忽略大小写字符的不同</div><div class="line">-c: 进行计数</div></pre></td></tr></table></figure></p>
+<p>范例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">范例一：使用 last 将账号列出，仅取出账号栏，进行排序后仅取出一位；</div><div class="line">[root@linux ~]# last | cut -d &apos; &apos; -f1 | sort | uniq</div><div class="line"></div><div class="line">范例二：承上题，如果我还想要知道每个人的登入总次数呢？</div><div class="line">[root@linux ~]# last | cut -d &apos; &apos; -f1 | sort | uniq -c</div></pre></td></tr></table></figure></p>
+<h4 id="wc-统计标准输出的总体数据（有多少行，多少字）"><a href="#wc-统计标准输出的总体数据（有多少行，多少字）" class="headerlink" title="wc:统计标准输出的总体数据（有多少行，多少字）"></a>wc:统计标准输出的总体数据（有多少行，多少字）</h4><p>参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">wc [-lwm]</div><div class="line"></div><div class="line">-l: 仅列出行</div><div class="line">-w: 仅列出多少字（英文单字）</div><div class="line">-m: 多少字符</div></pre></td></tr></table></figure></p>
+<p>范例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">那个 /etc/man.config 里面到底有多少相关字、行、字符数？</div><div class="line">[root@linux ~]# cat /etc/man.config | wc</div><div class="line">138 709 4506</div><div class="line"># 输出的三个数字中，分别代表： 『行、字数、字符数』</div></pre></td></tr></table></figure></p>
+<h3 id="tee-双向重定向"><a href="#tee-双向重定向" class="headerlink" title="tee: 双向重定向"></a>tee: 双向重定向</h3><p>接受标准输入，同时输出到文件和标准输出。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tee [-a] file</div><div class="line">-a: 以累加的方式，数据加入file当中</div></pre></td></tr></table></figure></p>
+<p>范例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ls -l /home | tee ~/homefile | more</div><div class="line">将 ls 的数据存一份到 ~/homefile ，同时屏幕也有输出讯息！</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/14/Linux一些配置文件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -565,7 +792,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,227
+                  4,436
                 </span>
               
 
@@ -581,7 +808,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  12
+                  17
                 </span>
               
             </div>
@@ -1800,7 +2027,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1890,7 +2117,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">  |  博客全站共12.5k字</span>
+  <span class="post-count">  |  博客全站共15.3k字</span>
 </div>
 
 

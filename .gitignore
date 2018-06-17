@@ -1,0 +1,8 @@
+public/
+.deploy*/
+node*
+sca*
+themes
+_config.yml
+db.json
+package.json

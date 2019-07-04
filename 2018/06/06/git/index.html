@@ -969,6 +969,22 @@
 
 
 
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: 'baf7607b1193557916d7',
+      clientSecret: '11439abb7692daa65a2a2cb5386f20f6c0361212',
+      repo: 'blogTalk',
+      owner: 'fallinsilence',
+      admin: ['fallinsilence'],
+      id: location.pathname,
+      distractionFreeMode: 'false'
+    })
+    gitalk.render('gitalk-container')
+  </script>
+
 
   
 
